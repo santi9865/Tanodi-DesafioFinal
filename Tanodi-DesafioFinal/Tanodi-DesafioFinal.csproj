@@ -53,6 +53,8 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Cotizacion.cs" />
+    <Compile Include="Modelo\Prenda.cs" />
+    <Compile Include="Modelo\Tienda.cs" />
     <Compile Include="Modelo\Vendedor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
