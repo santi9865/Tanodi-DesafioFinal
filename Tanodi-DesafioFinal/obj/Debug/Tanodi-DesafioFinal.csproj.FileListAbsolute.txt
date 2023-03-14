@@ -1,0 +1,10 @@
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.csproj.AssemblyReference.cache
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.Properties.Resources.resources
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.csproj.GenerateResource.cache
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.csproj.CoreCompileInputs.cache
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\Debug\Tanodi-DesafioFinal.exe.config
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\Debug\Tanodi-DesafioFinal.exe
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\Debug\Tanodi-DesafioFinal.pdb
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.exe
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.pdb
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.Form1.resources

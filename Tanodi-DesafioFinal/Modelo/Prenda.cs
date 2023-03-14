@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 
 namespace Tanodi_DesafioFinal.Modelo
 {
-    class Prenda
+    abstract class Prenda
     {
-        public Calidad Calidad { get; private set; }
-        public float PrecioUnitario { get; private set; }
-        public int Stock { get; private set; }
-    }
+        public bool EsPremium { get; }
+        public float PrecioUnitario {get; protected set; }
+        public int Stock { get; }
 
-    public enum Calidad
-    {
-        Standard,
-        Premium
+        public Prenda(bool esPremium, float precioUnitario, int stock = 1)
+        {
+            EsPremium = esPremium;
+            PrecioUnitario = precioUnitario;
+            Stock = stock;
+        }
+
+        protected virtual void CalcularPrecioUnitarioFinal()
+        {
+            if(EsPremium)
+            {
+                //Aumentar el precio actual en un 30%
+                PrecioUnitario += PrecioUnitario * 0.3F;
+            }
+        }
     }
 }

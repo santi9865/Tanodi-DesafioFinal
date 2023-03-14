@@ -29,13 +29,36 @@ namespace Tanodi_DesafioFinal
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblTest = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // lblTest
+            // 
+            this.lblTest.AutoSize = true;
+            this.lblTest.Location = new System.Drawing.Point(59, 62);
+            this.lblTest.Name = "lblTest";
+            this.lblTest.Size = new System.Drawing.Size(35, 13);
+            this.lblTest.TabIndex = 0;
+            this.lblTest.Text = "label1";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTest);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
+
         #endregion
+
+        private System.Windows.Forms.Label lblTest;
     }
 }
 
