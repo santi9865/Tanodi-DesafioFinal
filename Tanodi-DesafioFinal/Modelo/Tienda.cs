@@ -19,6 +19,9 @@ namespace Tanodi_DesafioFinal.Modelo
         {
             Nombre = nombre;
             Direccion = direccion;
+
+            _vendedores = new List<Vendedor>();
+            _prendas = new List<Prenda>();
         }
 
         public void NuevaPrenda(Prenda prenda)
@@ -29,6 +32,19 @@ namespace Tanodi_DesafioFinal.Modelo
         public void NuevoVendedor(Vendedor vendedor)
         {
             _vendedores.Add(vendedor);
+        }
+
+        public Vendedor GetVendedor(int codigo)
+        {
+            foreach(Vendedor vendedor in _vendedores)
+            {
+                if(vendedor.Codigo == codigo)
+                {
+                    return vendedor;
+                }
+            }
+
+            return null;
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tanodi_DesafioFinal.Modelo
 {
-    abstract class Prenda
+    public abstract class Prenda
     {
         public bool EsPremium { get; }
         public float PrecioUnitario {get; protected set; }

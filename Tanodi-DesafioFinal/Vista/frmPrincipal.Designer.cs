@@ -52,13 +52,13 @@ namespace Tanodi_DesafioFinal
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.btnCotizar = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.gboxStock = new System.Windows.Forms.GroupBox();
-            this.gboxCotizacion = new System.Windows.Forms.GroupBox();
-            this.txtStock = new System.Windows.Forms.TextBox();
+            this.gboxAñadir = new System.Windows.Forms.GroupBox();
             this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.gboxCotizacion = new System.Windows.Forms.GroupBox();
             this.gboxPrenda.SuspendLayout();
             this.gboxCalidad.SuspendLayout();
-            this.gboxStock.SuspendLayout();
+            this.gboxAñadir.SuspendLayout();
             this.gboxCotizacion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,6 +129,7 @@ namespace Tanodi_DesafioFinal
             this.btnHistorialCotizaciones.TabIndex = 6;
             this.btnHistorialCotizaciones.Text = "Historial de cotizaciones";
             this.btnHistorialCotizaciones.UseVisualStyleBackColor = true;
+            this.btnHistorialCotizaciones.Click += new System.EventHandler(this.btnHistorialCotizaciones_Click);
             // 
             // gboxPrenda
             // 
@@ -156,6 +157,7 @@ namespace Tanodi_DesafioFinal
             this.rbtnPantalon.TabStop = true;
             this.rbtnPantalon.Text = "Pantalón";
             this.rbtnPantalon.UseVisualStyleBackColor = true;
+            this.rbtnPantalon.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // rbtnCamisa
             // 
@@ -169,6 +171,7 @@ namespace Tanodi_DesafioFinal
             this.rbtnCamisa.TabStop = true;
             this.rbtnCamisa.Text = "Camisa";
             this.rbtnCamisa.UseVisualStyleBackColor = true;
+            this.rbtnCamisa.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // cboxMangaCorta
             // 
@@ -179,6 +182,7 @@ namespace Tanodi_DesafioFinal
             this.cboxMangaCorta.TabIndex = 4;
             this.cboxMangaCorta.Text = "Manga Corta";
             this.cboxMangaCorta.UseVisualStyleBackColor = true;
+            this.cboxMangaCorta.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // cboxChupin
             // 
@@ -189,6 +193,7 @@ namespace Tanodi_DesafioFinal
             this.cboxChupin.TabIndex = 3;
             this.cboxChupin.Text = "Chupín";
             this.cboxChupin.UseVisualStyleBackColor = true;
+            this.cboxChupin.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // cboxCuelloMao
             // 
@@ -199,6 +204,7 @@ namespace Tanodi_DesafioFinal
             this.cboxCuelloMao.TabIndex = 2;
             this.cboxCuelloMao.Text = "Cuello Mao";
             this.cboxCuelloMao.UseVisualStyleBackColor = true;
+            this.cboxCuelloMao.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // lblStockDisponible
             // 
@@ -232,6 +238,7 @@ namespace Tanodi_DesafioFinal
             this.rbtnCalidadPremium.TabStop = true;
             this.rbtnCalidadPremium.Text = "Premium";
             this.rbtnCalidadPremium.UseVisualStyleBackColor = true;
+            this.rbtnCalidadPremium.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // rbtnCalidadNormal
             // 
@@ -244,6 +251,7 @@ namespace Tanodi_DesafioFinal
             this.rbtnCalidadNormal.TabStop = true;
             this.rbtnCalidadNormal.Text = "Normal";
             this.rbtnCalidadNormal.UseVisualStyleBackColor = true;
+            this.rbtnCalidadNormal.CheckedChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // btnAnadirPrenda
             // 
@@ -254,6 +262,7 @@ namespace Tanodi_DesafioFinal
             this.btnAnadirPrenda.TabIndex = 9;
             this.btnAnadirPrenda.Text = "Añadir Prenda";
             this.btnAnadirPrenda.UseVisualStyleBackColor = true;
+            this.btnAnadirPrenda.Click += new System.EventHandler(this.btnAnadirPrenda_Click);
             // 
             // lblPrecioUnitario
             // 
@@ -262,7 +271,7 @@ namespace Tanodi_DesafioFinal
             this.lblPrecioUnitario.Name = "lblPrecioUnitario";
             this.lblPrecioUnitario.Size = new System.Drawing.Size(200, 32);
             this.lblPrecioUnitario.TabIndex = 10;
-            this.lblPrecioUnitario.Text = "Precio Unitario:";
+            this.lblPrecioUnitario.Text = "Precio Unitario: $";
             this.lblPrecioUnitario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCantidad
@@ -292,6 +301,7 @@ namespace Tanodi_DesafioFinal
             this.btnCotizar.TabIndex = 13;
             this.btnCotizar.Text = "Cotizar";
             this.btnCotizar.UseVisualStyleBackColor = true;
+            this.btnCotizar.Click += new System.EventHandler(this.btnCotizar_Click);
             // 
             // lblTotal
             // 
@@ -304,20 +314,38 @@ namespace Tanodi_DesafioFinal
             this.lblTotal.Text = "Monto Total:";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // gboxStock
+            // gboxAñadir
             // 
-            this.gboxStock.Controls.Add(this.txtPrecioUnitario);
-            this.gboxStock.Controls.Add(this.txtStock);
-            this.gboxStock.Controls.Add(this.btnAnadirPrenda);
-            this.gboxStock.Controls.Add(this.lblStockDisponible);
-            this.gboxStock.Controls.Add(this.lblPrecioUnitario);
-            this.gboxStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gboxStock.Location = new System.Drawing.Point(30, 360);
-            this.gboxStock.Name = "gboxStock";
-            this.gboxStock.Size = new System.Drawing.Size(240, 200);
-            this.gboxStock.TabIndex = 15;
-            this.gboxStock.TabStop = false;
-            this.gboxStock.Text = "Stock";
+            this.gboxAñadir.Controls.Add(this.txtPrecioUnitario);
+            this.gboxAñadir.Controls.Add(this.txtStock);
+            this.gboxAñadir.Controls.Add(this.btnAnadirPrenda);
+            this.gboxAñadir.Controls.Add(this.lblStockDisponible);
+            this.gboxAñadir.Controls.Add(this.lblPrecioUnitario);
+            this.gboxAñadir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gboxAñadir.Location = new System.Drawing.Point(30, 360);
+            this.gboxAñadir.Name = "gboxAñadir";
+            this.gboxAñadir.Size = new System.Drawing.Size(240, 200);
+            this.gboxAñadir.TabIndex = 15;
+            this.gboxAñadir.TabStop = false;
+            this.gboxAñadir.Text = "Añadir";
+            // 
+            // txtPrecioUnitario
+            // 
+            this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(147, 95);
+            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(73, 26);
+            this.txtPrecioUnitario.TabIndex = 14;
+            this.txtPrecioUnitario.TextChanged += new System.EventHandler(this.txtPrecioUnitario_TextChanged);
+            // 
+            // txtStock
+            // 
+            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Location = new System.Drawing.Point(147, 38);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(73, 26);
+            this.txtStock.TabIndex = 13;
+            this.txtStock.TextChanged += new System.EventHandler(this.txtStock_TextChanged);
             // 
             // gboxCotizacion
             // 
@@ -334,29 +362,13 @@ namespace Tanodi_DesafioFinal
             this.gboxCotizacion.TabStop = false;
             this.gboxCotizacion.Text = "Cotización";
             // 
-            // txtStock
-            // 
-            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.Location = new System.Drawing.Point(147, 38);
-            this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(73, 26);
-            this.txtStock.TabIndex = 13;
-            // 
-            // txtPrecioUnitario
-            // 
-            this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(147, 95);
-            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(73, 26);
-            this.txtPrecioUnitario.TabIndex = 14;
-            // 
             // frmCotipro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 590);
             this.Controls.Add(this.gboxCotizacion);
-            this.Controls.Add(this.gboxStock);
+            this.Controls.Add(this.gboxAñadir);
             this.Controls.Add(this.gboxCalidad);
             this.Controls.Add(this.gboxPrenda);
             this.Controls.Add(this.btnHistorialCotizaciones);
@@ -373,8 +385,8 @@ namespace Tanodi_DesafioFinal
             this.gboxPrenda.PerformLayout();
             this.gboxCalidad.ResumeLayout(false);
             this.gboxCalidad.PerformLayout();
-            this.gboxStock.ResumeLayout(false);
-            this.gboxStock.PerformLayout();
+            this.gboxAñadir.ResumeLayout(false);
+            this.gboxAñadir.PerformLayout();
             this.gboxCotizacion.ResumeLayout(false);
             this.gboxCotizacion.PerformLayout();
             this.ResumeLayout(false);
@@ -408,7 +420,7 @@ namespace Tanodi_DesafioFinal
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Button btnCotizar;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.GroupBox gboxStock;
+        private System.Windows.Forms.GroupBox gboxAñadir;
         private System.Windows.Forms.GroupBox gboxCotizacion;
         private System.Windows.Forms.TextBox txtPrecioUnitario;
         private System.Windows.Forms.TextBox txtStock;

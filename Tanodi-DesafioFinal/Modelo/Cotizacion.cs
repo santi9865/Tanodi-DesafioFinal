@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tanodi_DesafioFinal.Modelo
 {
-    class Cotizacion
+    public class Cotizacion
     {
         public int ID { get; private set; } //Número de identificación
         public DateTime FechaYHora { get; private set; } //Fecha y hora de creación

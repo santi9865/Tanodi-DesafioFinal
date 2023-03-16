@@ -10,5 +10,8 @@ namespace Tanodi_DesafioFinal.Presentador
     {
         void MostrarMontoTotal(float monto);
         void ActivarCotizacion();
+        void MostrarError(string mensaje);
+        void ActualizarTienda(string nombre, string direccion);
+        void ActualizarVendedor(string nombre, string apellido, string codigo);
     }
 }

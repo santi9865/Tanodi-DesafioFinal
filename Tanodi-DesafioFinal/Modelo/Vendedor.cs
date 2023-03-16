@@ -21,13 +21,28 @@ namespace Tanodi_DesafioFinal.Modelo
             Apellido = apellido;
             Codigo = codigo;
             _tienda = tienda;
+
+            HistorialCotizaciones = new List<Cotizacion>();
         }
 
-        public void NuevaCotizacion(int id, DateTime fechaYHora, Prenda prenda, int cantidad)
+        public Cotizacion NuevaCotizacion(Prenda prenda, int cantidad)
         {
-            Cotizacion nuevaCotizacion = new Cotizacion(id, fechaYHora, Codigo, prenda, cantidad);
+            int idUltimaCotizacion;
+
+            if(HistorialCotizaciones.Count > 0)
+            {
+                idUltimaCotizacion = HistorialCotizaciones[HistorialCotizaciones.Count - 1].ID;
+            }
+            else
+            {
+                idUltimaCotizacion = 0;
+            }
+
+            Cotizacion nuevaCotizacion = new Cotizacion(idUltimaCotizacion + 1, DateTime.Now, Codigo, prenda, cantidad);
 
             HistorialCotizaciones.Add(nuevaCotizacion);
+
+            return nuevaCotizacion;
         }
 
     }

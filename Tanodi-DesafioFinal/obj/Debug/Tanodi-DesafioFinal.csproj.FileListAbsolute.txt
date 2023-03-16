@@ -8,3 +8,4 @@ C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\D
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.exe
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.pdb
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.frmCotipro.resources
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.HistorialCotizaciones.resources

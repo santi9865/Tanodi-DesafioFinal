@@ -46,8 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentador\IHistorialCotizador.cs" />
+    <Compile Include="Vista\frmHistorialCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\frmHistorialCotizaciones.Designer.cs">
+      <DependentUpon>frmHistorialCotizaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentador\IVistaCotizador.cs" />
     <Compile Include="Presentador\PresentadorPrincipal.cs" />
+    <Compile Include="Presentador\Validador.cs" />
     <Compile Include="Vista\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +70,9 @@
     <Compile Include="Modelo\Vendedor.cs" />
     <Compile Include="Vista\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Vista\frmHistorialCotizaciones.resx">
+      <DependentUpon>frmHistorialCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
