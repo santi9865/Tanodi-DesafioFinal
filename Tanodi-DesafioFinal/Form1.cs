@@ -11,9 +11,9 @@ using Tanodi_DesafioFinal.Modelo;
 
 namespace Tanodi_DesafioFinal
 {
-    public partial class Form1 : Form
+    public partial class frmCotipro : Form
     {
-        public Form1()
+        public frmCotipro()
         {
             InitializeComponent();
         }
@@ -23,9 +23,7 @@ namespace Tanodi_DesafioFinal
 
             Camisa camisa = new Camisa(true, TipoManga.Corta, true, 100, 1);
 
-            lblTest.Text = camisa.PrecioUnitario.ToString();
         }
-
 
     }
 }

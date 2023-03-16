@@ -14,5 +14,20 @@ namespace Tanodi_DesafioFinal.Modelo
         public Prenda Prenda { get; private set; }
         public int Cantidad { get; private set; }
         public float Resultado { get; private set; }
+
+        public Cotizacion(int id, DateTime fechaYHora, int codigoVendedor, Prenda prenda, int cantidad)
+        {
+            ID = id;
+            FechaYHora = fechaYHora;
+            CodigoVendedor = codigoVendedor;
+            Prenda = prenda;
+            Cantidad = cantidad;
+            Cotizar();
+        }
+
+        private void Cotizar()
+        {
+            Resultado = Prenda.PrecioUnitario * Cantidad;
+        }
     }
 }

@@ -7,4 +7,5 @@ C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\D
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\bin\Debug\Tanodi-DesafioFinal.pdb
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.exe
 C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.pdb
-C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.Form1.resources
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi-DesafioFinal.csproj.SuggestedBindingRedirects.cache
+C:\Users\santi\OneDrive\Escritorio\Tanodi-DesafioFinal\Tanodi-DesafioFinal\obj\Debug\Tanodi_DesafioFinal.frmCotipro.resources
