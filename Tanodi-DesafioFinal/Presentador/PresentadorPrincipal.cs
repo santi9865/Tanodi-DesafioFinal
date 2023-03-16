@@ -22,6 +22,7 @@ namespace Tanodi_DesafioFinal.Presentador
             _vistaCotizador = vista;
 
             CrearTiendaYVendedorFicticios();
+            AñadirPrendasPreexistentes();
         }
 
         private void CrearTiendaYVendedorFicticios()
@@ -32,6 +33,82 @@ namespace Tanodi_DesafioFinal.Presentador
 
             _vistaCotizador.ActualizarTienda(_tienda.Nombre, _tienda.Direccion);
             _vistaCotizador.ActualizarVendedor(_vendedorActual.Nombre, _vendedorActual.Apellido, _vendedorActual.Codigo.ToString());
+        }
+
+        private void AñadirPrendasPreexistentes()
+        {
+            _tienda.NuevaPrenda(new Camisa(true, TipoManga.Corta, false, 0, 100));
+            _tienda.NuevaPrenda(new Camisa(true, TipoManga.Corta, true, 0, 100));
+            _tienda.NuevaPrenda(new Camisa(false, TipoManga.Corta, false, 0, 150));
+            _tienda.NuevaPrenda(new Camisa(false, TipoManga.Corta, true, 0, 150));
+
+            _tienda.NuevaPrenda(new Camisa(true, TipoManga.Larga, false, 0, 75));
+            _tienda.NuevaPrenda(new Camisa(true, TipoManga.Larga, true, 0, 75));
+            _tienda.NuevaPrenda(new Camisa(false, TipoManga.Larga, false, 0, 175));
+            _tienda.NuevaPrenda(new Camisa(false, TipoManga.Larga, true, 0, 175));
+
+            _tienda.NuevaPrenda(new Pantalon(false, 0, true, 750));
+            _tienda.NuevaPrenda(new Pantalon(true, 0, true, 750));
+
+            _tienda.NuevaPrenda(new Pantalon(false, 0, false, 250));
+            _tienda.NuevaPrenda(new Pantalon(true, 0, false, 250));
+        }
+
+        public void CheckearPrenda(TipoPrenda tipoPrenda, bool cuelloMao, TipoManga manga, bool esChupin, bool esPremium, string precioUnitario)
+        {
+            float precioUnitarioFloat = 0;
+            int stockPedido = 0;
+
+            if (Validador.ValidarFloat(precioUnitario, ref precioUnitarioFloat))
+            {
+                if (!(precioUnitarioFloat > 0))
+                {
+                    _vistaCotizador.MostrarError("El precio unitario debe ser mayor a 0.");
+                }
+            }
+            else
+            {
+                _vistaCotizador.MostrarError("El número del precio unitario es inválido.");
+            }
+
+            if (precioUnitarioFloat > 0)
+            {
+                Prenda pedido  = new Camisa(cuelloMao, manga, esPremium, precioUnitarioFloat, 0); ;
+
+                switch (tipoPrenda)
+                {
+                    case TipoPrenda.Camisa:
+                        pedido = new Camisa(cuelloMao, manga, esPremium, precioUnitarioFloat, 0);
+                        break;
+                    case TipoPrenda.Pantalon:
+                        pedido = new Pantalon(esPremium, precioUnitarioFloat, esChupin, 0);
+                        break;
+                }
+
+                stockPedido = _tienda.GetStock(pedido);
+
+                if (stockPedido < 1)
+                {
+                    _vistaCotizador.MostrarError("No hay stock de esa prenda.");
+                }
+                else
+                {
+                    _vistaCotizador.ActivarCotizacion();
+
+                    switch (tipoPrenda)
+                    {
+                        case TipoPrenda.Camisa:
+                            _prendaActual = new Camisa(cuelloMao, manga, esPremium, precioUnitarioFloat, stockPedido);
+                            break;
+                        case TipoPrenda.Pantalon:
+                            _prendaActual = new Pantalon(esPremium, precioUnitarioFloat, esChupin, stockPedido);
+                            break;
+                    }
+
+                    _vistaCotizador.ActualizarStock(stockPedido.ToString());
+                }
+
+            }
         }
 
         public void AñadirPrenda(TipoPrenda tipoPrenda, bool cuelloMao, TipoManga manga, bool esChupin, bool esPremium ,string stock, string precioUnitario )

@@ -47,5 +47,31 @@ namespace Tanodi_DesafioFinal.Modelo
             return null;
         }
 
+        public int GetStock(Prenda pedido)
+        {
+            foreach(Prenda prenda in _prendas)
+            {
+                if(pedido.EsPremium == prenda.EsPremium)
+                {
+                    if (pedido is Camisa camisaPedido && prenda is Camisa camisaPrenda)
+                    {
+                        if(camisaPedido.CuelloMao == camisaPrenda.CuelloMao && camisaPedido.Manga == camisaPrenda.Manga)
+                        {
+                            return camisaPrenda.Stock;
+                        }
+                    }
+                    else if(pedido is Pantalon pantalonPedido && prenda is Pantalon pantalonPrenda)
+                    {
+                        if(pantalonPedido.EsChupin == pantalonPrenda.EsChupin)
+                        {
+                            return pantalonPrenda.Stock;
+                        }
+                    }
+                }
+            }
+
+            return -1;
+        }
+
     }
 }

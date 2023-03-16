@@ -92,8 +92,8 @@ namespace Tanodi_DesafioFinal
                 tipoManga = TipoManga.Larga;
             }
 
-            _presentador.AñadirPrenda(tipoPrenda, cboxCuelloMao.Checked, tipoManga, cboxChupin.Checked,
-                rbtnCalidadPremium.Checked, txtStock.Text, txtPrecioUnitario.Text);
+            _presentador.CheckearPrenda(tipoPrenda, cboxCuelloMao.Checked, tipoManga, cboxChupin.Checked,
+                rbtnCalidadPremium.Checked, txtPrecioUnitario.Text);
         }
 
         private void btnCotizar_Click(object sender, EventArgs e)
@@ -104,6 +104,11 @@ namespace Tanodi_DesafioFinal
         private void btnHistorialCotizaciones_Click(object sender, EventArgs e)
         {
             _presentador.AbrirHistorial();
+        }
+
+        public void ActualizarStock(string stock)
+        {
+            txtStock.Text = stock;
         }
     }
 }
