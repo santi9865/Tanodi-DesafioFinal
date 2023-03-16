@@ -46,11 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Presentador\IVistaCotizador.cs" />
+    <Compile Include="Presentador\PresentadorPrincipal.cs" />
+    <Compile Include="Vista\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vista\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Camisa.cs" />
     <Compile Include="Modelo\Cotizacion.cs" />
@@ -58,10 +60,10 @@
     <Compile Include="Modelo\Prenda.cs" />
     <Compile Include="Modelo\Tienda.cs" />
     <Compile Include="Modelo\Vendedor.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Vista\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Vista\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

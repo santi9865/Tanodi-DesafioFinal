@@ -46,7 +46,7 @@ namespace Tanodi_DesafioFinal
             this.gboxCalidad = new System.Windows.Forms.GroupBox();
             this.rbtnCalidadPremium = new System.Windows.Forms.RadioButton();
             this.rbtnCalidadNormal = new System.Windows.Forms.RadioButton();
-            this.btnConsultarStock = new System.Windows.Forms.Button();
+            this.btnAnadirPrenda = new System.Windows.Forms.Button();
             this.lblPrecioUnitario = new System.Windows.Forms.Label();
             this.lblCantidad = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -54,6 +54,8 @@ namespace Tanodi_DesafioFinal
             this.lblTotal = new System.Windows.Forms.Label();
             this.gboxStock = new System.Windows.Forms.GroupBox();
             this.gboxCotizacion = new System.Windows.Forms.GroupBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
+            this.txtPrecioUnitario = new System.Windows.Forms.TextBox();
             this.gboxPrenda.SuspendLayout();
             this.gboxCalidad.SuspendLayout();
             this.gboxStock.SuspendLayout();
@@ -147,7 +149,7 @@ namespace Tanodi_DesafioFinal
             // 
             this.rbtnPantalon.AutoSize = true;
             this.rbtnPantalon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnPantalon.Location = new System.Drawing.Point(225, 44);
+            this.rbtnPantalon.Location = new System.Drawing.Point(202, 34);
             this.rbtnPantalon.Name = "rbtnPantalon";
             this.rbtnPantalon.Size = new System.Drawing.Size(98, 24);
             this.rbtnPantalon.TabIndex = 6;
@@ -158,8 +160,9 @@ namespace Tanodi_DesafioFinal
             // rbtnCamisa
             // 
             this.rbtnCamisa.AutoSize = true;
+            this.rbtnCamisa.Checked = true;
             this.rbtnCamisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnCamisa.Location = new System.Drawing.Point(22, 44);
+            this.rbtnCamisa.Location = new System.Drawing.Point(30, 34);
             this.rbtnCamisa.Name = "rbtnCamisa";
             this.rbtnCamisa.Size = new System.Drawing.Size(86, 24);
             this.rbtnCamisa.TabIndex = 5;
@@ -170,7 +173,7 @@ namespace Tanodi_DesafioFinal
             // cboxMangaCorta
             // 
             this.cboxMangaCorta.AutoSize = true;
-            this.cboxMangaCorta.Location = new System.Drawing.Point(22, 129);
+            this.cboxMangaCorta.Location = new System.Drawing.Point(30, 122);
             this.cboxMangaCorta.Name = "cboxMangaCorta";
             this.cboxMangaCorta.Size = new System.Drawing.Size(120, 24);
             this.cboxMangaCorta.TabIndex = 4;
@@ -180,7 +183,7 @@ namespace Tanodi_DesafioFinal
             // cboxChupin
             // 
             this.cboxChupin.AutoSize = true;
-            this.cboxChupin.Location = new System.Drawing.Point(225, 88);
+            this.cboxChupin.Location = new System.Drawing.Point(202, 77);
             this.cboxChupin.Name = "cboxChupin";
             this.cboxChupin.Size = new System.Drawing.Size(78, 24);
             this.cboxChupin.TabIndex = 3;
@@ -190,7 +193,7 @@ namespace Tanodi_DesafioFinal
             // cboxCuelloMao
             // 
             this.cboxCuelloMao.AutoSize = true;
-            this.cboxCuelloMao.Location = new System.Drawing.Point(22, 88);
+            this.cboxCuelloMao.Location = new System.Drawing.Point(30, 77);
             this.cboxCuelloMao.Name = "cboxCuelloMao";
             this.cboxCuelloMao.Size = new System.Drawing.Size(107, 24);
             this.cboxCuelloMao.TabIndex = 2;
@@ -199,11 +202,10 @@ namespace Tanodi_DesafioFinal
             // 
             // lblStockDisponible
             // 
-            this.lblStockDisponible.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblStockDisponible.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStockDisponible.Location = new System.Drawing.Point(20, 35);
             this.lblStockDisponible.Name = "lblStockDisponible";
-            this.lblStockDisponible.Size = new System.Drawing.Size(200, 32);
+            this.lblStockDisponible.Size = new System.Drawing.Size(141, 32);
             this.lblStockDisponible.TabIndex = 7;
             this.lblStockDisponible.Text = "Stock Disponible: ";
             this.lblStockDisponible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -223,7 +225,7 @@ namespace Tanodi_DesafioFinal
             // rbtnCalidadPremium
             // 
             this.rbtnCalidadPremium.AutoSize = true;
-            this.rbtnCalidadPremium.Location = new System.Drawing.Point(21, 88);
+            this.rbtnCalidadPremium.Location = new System.Drawing.Point(30, 77);
             this.rbtnCalidadPremium.Name = "rbtnCalidadPremium";
             this.rbtnCalidadPremium.Size = new System.Drawing.Size(89, 24);
             this.rbtnCalidadPremium.TabIndex = 1;
@@ -234,7 +236,8 @@ namespace Tanodi_DesafioFinal
             // rbtnCalidadNormal
             // 
             this.rbtnCalidadNormal.AutoSize = true;
-            this.rbtnCalidadNormal.Location = new System.Drawing.Point(21, 44);
+            this.rbtnCalidadNormal.Checked = true;
+            this.rbtnCalidadNormal.Location = new System.Drawing.Point(30, 34);
             this.rbtnCalidadNormal.Name = "rbtnCalidadNormal";
             this.rbtnCalidadNormal.Size = new System.Drawing.Size(77, 24);
             this.rbtnCalidadNormal.TabIndex = 0;
@@ -242,19 +245,18 @@ namespace Tanodi_DesafioFinal
             this.rbtnCalidadNormal.Text = "Normal";
             this.rbtnCalidadNormal.UseVisualStyleBackColor = true;
             // 
-            // btnConsultarStock
+            // btnAnadirPrenda
             // 
-            this.btnConsultarStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarStock.Location = new System.Drawing.Point(20, 150);
-            this.btnConsultarStock.Name = "btnConsultarStock";
-            this.btnConsultarStock.Size = new System.Drawing.Size(200, 32);
-            this.btnConsultarStock.TabIndex = 9;
-            this.btnConsultarStock.Text = "Consultar Stock";
-            this.btnConsultarStock.UseVisualStyleBackColor = true;
+            this.btnAnadirPrenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnadirPrenda.Location = new System.Drawing.Point(20, 150);
+            this.btnAnadirPrenda.Name = "btnAnadirPrenda";
+            this.btnAnadirPrenda.Size = new System.Drawing.Size(200, 32);
+            this.btnAnadirPrenda.TabIndex = 9;
+            this.btnAnadirPrenda.Text = "Añadir Prenda";
+            this.btnAnadirPrenda.UseVisualStyleBackColor = true;
             // 
             // lblPrecioUnitario
             // 
-            this.lblPrecioUnitario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrecioUnitario.Location = new System.Drawing.Point(20, 92);
             this.lblPrecioUnitario.Name = "lblPrecioUnitario";
@@ -304,7 +306,9 @@ namespace Tanodi_DesafioFinal
             // 
             // gboxStock
             // 
-            this.gboxStock.Controls.Add(this.btnConsultarStock);
+            this.gboxStock.Controls.Add(this.txtPrecioUnitario);
+            this.gboxStock.Controls.Add(this.txtStock);
+            this.gboxStock.Controls.Add(this.btnAnadirPrenda);
             this.gboxStock.Controls.Add(this.lblStockDisponible);
             this.gboxStock.Controls.Add(this.lblPrecioUnitario);
             this.gboxStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -321,6 +325,7 @@ namespace Tanodi_DesafioFinal
             this.gboxCotizacion.Controls.Add(this.btnCotizar);
             this.gboxCotizacion.Controls.Add(this.lblCantidad);
             this.gboxCotizacion.Controls.Add(this.txtCantidad);
+            this.gboxCotizacion.Enabled = false;
             this.gboxCotizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gboxCotizacion.Location = new System.Drawing.Point(300, 360);
             this.gboxCotizacion.Name = "gboxCotizacion";
@@ -328,6 +333,22 @@ namespace Tanodi_DesafioFinal
             this.gboxCotizacion.TabIndex = 16;
             this.gboxCotizacion.TabStop = false;
             this.gboxCotizacion.Text = "Cotización";
+            // 
+            // txtStock
+            // 
+            this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStock.Location = new System.Drawing.Point(147, 38);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(73, 26);
+            this.txtStock.TabIndex = 13;
+            // 
+            // txtPrecioUnitario
+            // 
+            this.txtPrecioUnitario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(147, 95);
+            this.txtPrecioUnitario.Name = "txtPrecioUnitario";
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(73, 26);
+            this.txtPrecioUnitario.TabIndex = 14;
             // 
             // frmCotipro
             // 
@@ -353,6 +374,7 @@ namespace Tanodi_DesafioFinal
             this.gboxCalidad.ResumeLayout(false);
             this.gboxCalidad.PerformLayout();
             this.gboxStock.ResumeLayout(false);
+            this.gboxStock.PerformLayout();
             this.gboxCotizacion.ResumeLayout(false);
             this.gboxCotizacion.PerformLayout();
             this.ResumeLayout(false);
@@ -380,7 +402,7 @@ namespace Tanodi_DesafioFinal
         private System.Windows.Forms.GroupBox gboxCalidad;
         private System.Windows.Forms.RadioButton rbtnCalidadPremium;
         private System.Windows.Forms.RadioButton rbtnCalidadNormal;
-        private System.Windows.Forms.Button btnConsultarStock;
+        private System.Windows.Forms.Button btnAnadirPrenda;
         private System.Windows.Forms.Label lblPrecioUnitario;
         private System.Windows.Forms.Label lblCantidad;
         private System.Windows.Forms.TextBox txtCantidad;
@@ -388,6 +410,8 @@ namespace Tanodi_DesafioFinal
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.GroupBox gboxStock;
         private System.Windows.Forms.GroupBox gboxCotizacion;
+        private System.Windows.Forms.TextBox txtPrecioUnitario;
+        private System.Windows.Forms.TextBox txtStock;
     }
 }
 

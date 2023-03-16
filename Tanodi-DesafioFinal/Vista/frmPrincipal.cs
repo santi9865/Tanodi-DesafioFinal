@@ -8,20 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tanodi_DesafioFinal.Modelo;
+using Tanodi_DesafioFinal.Presentador;
 
 namespace Tanodi_DesafioFinal
 {
-    public partial class frmCotipro : Form
+    public partial class frmCotipro : Form, IVistaCotizador
     {
         public frmCotipro()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void MostrarMontoTotal(float monto)
         {
 
-            Camisa camisa = new Camisa(true, TipoManga.Corta, true, 100, 1);
+        }
+
+        public void ActivarCotizacion()
+        {
 
         }
 
